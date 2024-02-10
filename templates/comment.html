@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{title}}</title>
 </head>
-<body>
+<style>
 
-</body>
+    html
+    {
+        background-color: rgb(27, 137, 137);
+    }
+</style>
+<body>
     <ol>
-        {% for comment in data %}
-            <li>{{comment}}</li>
+        {%for comm in data%}
+
+            <li>{{comm}}</li>
+            
         {% endfor %}
     </ol>
+    
+</body>
 </html>

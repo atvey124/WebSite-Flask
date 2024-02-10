@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ргеистрация</title>
+    <title>Регистрация</title>
 </head>
 <style>
-
     html
     {
-        background-color: rgb(16, 107, 107);
+        background-color: rgb(181, 225, 210);
     }
+    p
+    {
+        text-align: center;
+    }
+
 </style>
 <body>
+    <center>
+        <h1>
+            Hello World!
+        </h1>
+    </center>
     <form action = "" method = "post">
         {{form.csrf_token}}
         {% for row in form if row.name != "csrf_token" %}
-                <p>  
-                    {% if row.name != "submit" %}
-                        {{row.label()}}
-                    {% endif %}
-                    {{row}}
-                </p>
+            <p>
+                {% if (row.name != "submit") %}
+                    {{row.label()}}
+                {% endif %}
+                {{row}}
+            </p>
         {% endfor %}
-
-
-
     </form>
-    
 </body>
 </html>

@@ -1,10 +1,18 @@
 from flask import Flask, render_template
-
+from register import RegisterForm
 
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = "hello hello hello hello"
 
+@app.route("/reg", methods = ["GET", "POST"])
+
+def reg():
+    form = RegisterForm()
+    if form.validate_on_submit:
+        print(form.data)
+    return render_template("reg.html", form = form)
 
 @app.route("/")
 

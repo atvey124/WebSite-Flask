@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ргеистрация</title>
+</head>
+<style>
+
+    html
+    {
+        background-color: rgb(16, 107, 107);
+    }
+</style>
+<body>
+    <form action = "" method = "post">
+        {{form.csrf_token}}
+        {% for row in form if row.name != "csrf_token" %}
+                <p>  
+                    {% if row.name != "submit" %}
+                        {{row.label()}}
+                    {% endif %}
+                    {{row}}
+                </p>
+        {% endfor %}
+
+
+
+    </form>
+    
+</body>
+</html>
